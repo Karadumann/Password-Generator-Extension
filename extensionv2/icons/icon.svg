@@ -1,0 +1,120 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main gradient for shield -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Inner gradient for shield -->
+    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Lock gradient -->
+    <linearGradient id="lockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5a6fd8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Key gradient -->
+    <linearGradient id="keyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd54f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffb300;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with glow -->
+  <circle cx="64" cy="64" r="60" fill="url(#shieldGradient)" filter="url(#glow)" opacity="0.8"/>
+  
+  <!-- Main shield shape -->
+  <path d="M 64 20 
+           L 85 30 
+           L 85 45 
+           C 85 60 75 75 64 80 
+           C 53 75 43 60 43 45 
+           L 43 30 Z" 
+        fill="url(#innerGradient)" 
+        stroke="url(#shieldGradient)" 
+        stroke-width="3"
+        filter="url(#shadow)"/>
+  
+  <!-- Shield border highlight -->
+  <path d="M 64 20 
+           L 85 30 
+           L 85 45 
+           C 85 60 75 75 64 80 
+           C 53 75 43 60 43 45 
+           L 43 30 Z" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="1.5" 
+        opacity="0.6"/>
+  
+  <!-- Lock body -->
+  <rect x="52" y="45" width="24" height="20" rx="3" fill="url(#lockGradient)" filter="url(#shadow)"/>
+  
+  <!-- Lock shackle -->
+  <path d="M 56 45 
+           L 56 35 
+           Q 56 30 60 30 
+           L 68 30 
+           Q 72 30 72 35 
+           L 72 45" 
+        stroke="url(#lockGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        stroke-linecap="round"
+        filter="url(#shadow)"/>
+  
+  <!-- Keyhole -->
+  <circle cx="64" cy="52" r="3" fill="#ffffff" opacity="0.9"/>
+  <rect x="63" y="52" width="2" height="8" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Key symbol -->
+  <g transform="translate(75, 35)">
+    <!-- Key head -->
+    <circle cx="8" cy="8" r="6" fill="url(#keyGradient)" filter="url(#shadow)"/>
+    <!-- Key shaft -->
+    <rect x="8" y="6" width="12" height="4" rx="2" fill="url(#keyGradient)" filter="url(#shadow)"/>
+    <!-- Key teeth -->
+    <rect x="12" y="4" width="2" height="8" rx="1" fill="url(#keyGradient)" filter="url(#shadow)"/>
+    <rect x="16" y="2" width="2" height="12" rx="1" fill="url(#keyGradient)" filter="url(#shadow)"/>
+  </g>
+  
+  <!-- Security dots pattern -->
+  <circle cx="30" cy="25" r="1.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="98" cy="30" r="1" fill="#ffffff" opacity="0.6"/>
+  <circle cx="25" cy="85" r="1.2" fill="#ffffff" opacity="0.5"/>
+  <circle cx="95" cy="80" r="0.8" fill="#ffffff" opacity="0.4"/>
+  
+  <!-- Sparkle effects -->
+  <g transform="translate(20, 20)">
+    <path d="M 0 -3 L 0 3 M -3 0 L 3 0" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
+  </g>
+  <g transform="translate(100, 25)">
+    <path d="M 0 -2 L 0 2 M -2 0 L 2 0" stroke="#ffffff" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  <g transform="translate(15, 95)">
+    <path d="M 0 -1.5 L 0 1.5 M -1.5 0 L 1.5 0" stroke="#ffffff" stroke-width="0.6" opacity="0.7"/>
+  </g>
+  
+  <!-- Subtle inner glow -->
+  <circle cx="64" cy="64" r="45" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.1"/>
+</svg> 

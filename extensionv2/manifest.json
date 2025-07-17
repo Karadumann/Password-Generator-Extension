@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Secure Password Generator",
+  "version": "1.0.0",
+  "description": "A modern, user-friendly, and highly secure password generator extension.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": []
+} 

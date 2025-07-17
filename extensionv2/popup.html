@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Secure Password Generator</h1>
+            <p class="subtitle">Generate strong, secure passwords instantly</p>
+        </header>
+
+        <main>
+            <div class="password-section">
+                <div class="password-display">
+                    <input type="text" id="passwordOutput" readonly placeholder="Your password will appear here">
+                    <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                        <span class="copy-icon">📋</span>
+                    </button>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-bar">
+                        <div id="strengthIndicator" class="strength-fill"></div>
+                    </div>
+                    <span id="strengthText" class="strength-text">Strength: Weak</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="passwordLength">Password Length: <span id="lengthValue">16</span></label>
+                <input type="range" id="passwordLength" min="8" max="64" value="16" class="slider">
+            </div>
+
+            <div class="options-section">
+                <h3>Character Types</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkmark"></span>
+                        Uppercase Letters (A-Z)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkmark"></span>
+                        Lowercase Letters (a-z)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkmark"></span>
+                        Numbers (0-9)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="symbols" checked>
+                        <span class="checkmark"></span>
+                        Symbols (!@#$%^&*)
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="excludeChars">Exclude Characters (optional):</label>
+                <input type="text" id="excludeChars" placeholder="e.g., l1O0" maxlength="20">
+            </div>
+
+            <button id="generateBtn" class="generate-btn">
+                <span class="generate-icon">⚡</span>
+                Generate Password
+            </button>
+
+            <div class="quick-actions">
+                <button id="refreshBtn" class="action-btn" title="Generate new password">
+                    🔄 Refresh
+                </button>
+                <button id="historyBtn" class="action-btn" title="View password history">
+                    📜 History
+                </button>
+            </div>
+        </main>
+
+        <footer class="security-tips">
+            <details>
+                <summary>🔒 Security Tips</summary>
+                <ul>
+                    <li>Use at least 12 characters for better security</li>
+                    <li>Include a mix of character types</li>
+                    <li>Never reuse passwords across accounts</li>
+                    <li>Consider using a password manager</li>
+                </ul>
+            </details>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 
